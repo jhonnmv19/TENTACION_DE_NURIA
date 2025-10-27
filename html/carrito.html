@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Tentación de Nuria</title>
+    <link rel="icon" href="../imagenes/logo.png" type="image/png">
+    <link rel="stylesheet" href="../styles/vanilla-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <header id="main-header">
+        <div class="container header-content">
+            <div class="logo-container" onclick="window.location.href='../index.html'">
+                <img src="../imagenes/logo.png" alt="Tentación de Nuria Logo" class="logo-img">
+            </div>
+            <nav class="desktop-nav">
+                <a href="../index.html" class="nav-btn">Inicio</a>
+                <a href="catalogo.html" class="nav-btn">Catálogo</a>
+                <a href="contacto.html" class="nav-btn">Contáctanos</a>
+                <a href="sobre-nosotros.html" class="nav-btn">Sobre Nosotros</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cart-section">
+        <div class="container">
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items" class="cart-items-container"></div>
+            <div id="cart-empty" class="cart-empty" style="display: none;">
+                <i class="fas fa-shopping-cart" style="font-size: 4rem; opacity: 0.5;"></i>
+                <p>Tu carrito está vacío</p>
+                <button class="btn-primary" onclick="window.location.href='catalogo.html'">Ver Productos</button>
+            </div>
+            <div id="cart-summary" class="cart-summary" style="display: none;">
+                <h3>Resumen del Pedido</h3>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">Bs. 0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Impuestos (13%):</span>
+                    <span id="tax">Bs. 0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">Bs. 0.00</span>
+                </div>
+                <button class="btn-checkout" onclick="proceedToCheckout()">Proceder al Pago</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Tentación de Nuria</h3>
+                <p>Repostería artesanal de calidad</p>
+            </div>
+               <div class="footer-section">
+                <h4>Sucursales</h4>
+
+                <a class="sucursal-link" href="https://maps.app.goo.gl/S64cc9BkiWxjoJpj7" target="_blank" rel="noopener noreferrer" aria-label="Sucursal Cochabamba en Google Maps">
+                    <i class="fas fa-map-marker-alt sucursal-icon" aria-hidden="true"></i>
+                    <div class="sucursal">
+                        <h5>Cochabamba</h5>
+                        <p class="direccion">Av. América 123</p>
+                        <p class="telefono"><i class="fas fa-phone-alt" aria-hidden="true"></i> +591 4 123 4567</p>
+                    </div>
+                </a>
+
+                <a class="sucursal-link" href="https://maps.app.goo.gl/S64cc9BkiWxjoJpj7" target="_blank" rel="noopener noreferrer" aria-label="Sucursal La Paz en Google Maps">
+                    <i class="fas fa-map-marker-alt sucursal-icon" aria-hidden="true"></i>
+                    <div class="sucursal">
+                        <h5>La Paz</h5>
+                        <p class="direccion">Av. 16 de Julio 456</p>
+                        <p class="telefono"><i class="fas fa-phone-alt" aria-hidden="true"></i> +591 2 234 5678</p>
+                    </div>
+                </a>
+
+                <a class="sucursal-link" href="https://maps.app.goo.gl/S64cc9BkiWxjoJpj7" target="_blank" rel="noopener noreferrer" aria-label="Sucursal Santa Cruz en Google Maps">
+                    <i class="fas fa-map-marker-alt sucursal-icon" aria-hidden="true"></i>
+                    <div class="sucursal">
+                        <h5>Santa Cruz</h5>
+                        <p class="direccion">Av. Cristo Redentor 789</p>
+                        <p class="telefono"><i class="fas fa-phone-alt" aria-hidden="true"></i> +591 3 345 6789</p>
+                    </div>
+                </a>
+            </div>
+          <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/jhonalan.veizaga?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook Tentación de Nuria">
+                        <img src="../imagenes/facebook.png" alt="Facebook" class="social-img">
+                    </a>
+                    <a href="https://www.instagram.com/elitemotor.2000/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Tentación de Nuria">
+                        <img src="../imagenes/instagram_rosa.png" alt="Instagram" class="social-img">
+                    </a>
+                     <a href="https://wa.me/+59172793459" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Tentación de Nuria">
+                         <img src="../imagenes/Whatsapp_rosa.png" alt="WhatsApp" class="social-img">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tentación de Nuria. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            displayCart();
+        });
+    </script>
+</body>
+</html>
